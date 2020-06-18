@@ -99,7 +99,7 @@ resource aws_route53_record fastmail-mail {
 }
 
 resource aws_route53_record fastmail-spf {
-  count = local.fastmail_extra_spf != null ? 1 : 0
+  count = local.enable_fastmail && local.fastmail_extra_spf != null ? 1 : 0
   zone_id = aws_route53_zone.default.zone_id
   name    = aws_route53_zone.default.name
   type    = "SPF"
@@ -111,7 +111,7 @@ resource aws_route53_record fastmail-spf {
 }
 
 resource aws_route53_record fastmail-txt {
-  count = local.fastmail_extra_spf != null ? 1 : 0
+  count = local.enable_fastmail && local.fastmail_extra_spf != null ? 1 : 0
   zone_id = aws_route53_zone.default.zone_id
   name    = aws_route53_zone.default.name
   type    = "TXT"
