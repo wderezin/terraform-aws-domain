@@ -3,6 +3,7 @@ locals {
   fqdn            = var.fqdn
   acm_cert_domain = "*.${local.fqdn}"
 
+// 5 minutes
   dns_ttl = 3600
 
   enable_fastmail              = var.enable_fastmail
@@ -14,4 +15,6 @@ locals {
   enable_mailgun_count = var.enable_mailgun ? 1 : 0
 
   subdomain_name_servers = var.subdomain_name_servers
+  cnames = var.cnames
+  cname_ttl = local.dns_ttl
 }

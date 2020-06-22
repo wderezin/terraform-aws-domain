@@ -40,3 +40,9 @@ variable subdomain_name_servers {
   default     = {}
   description = "A map of <name> : [name servers]"
 }
+
+variable cnames {
+  type = map(list(string))
+  default = {}
+  description = "A map of <name> : [values]"
+}
