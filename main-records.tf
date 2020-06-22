@@ -11,7 +11,7 @@ resource aws_route53_record cname {
 }
 
 resource aws_route53_record txt {
-  for_each = local.cnames
+  for_each = local.txts
   name     = "${each.key}.daringway.com"
   ttl      = local.txts_ttl
   type     = "TXT"
