@@ -1,6 +1,6 @@
 
 resource aws_route53_record fastmail-mx-0 {
-  count = local.enable_fastmail_count
+  count   = local.enable_fastmail_count
   zone_id = aws_route53_zone.default.zone_id
   name    = aws_route53_zone.default.name
   type    = "MX"
@@ -13,7 +13,7 @@ resource aws_route53_record fastmail-mx-0 {
 }
 
 resource aws_route53_record fastmail-mx-1 {
-  count = local.enable_fastmail_count
+  count   = local.enable_fastmail_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "*.${aws_route53_zone.default.name}"
   type    = "MX"
@@ -26,7 +26,7 @@ resource aws_route53_record fastmail-mx-1 {
 }
 
 resource aws_route53_record fastmail-domainkey {
-  count = local.enable_fastmail ? 3 : 0
+  count   = local.enable_fastmail ? 3 : 0
   zone_id = aws_route53_zone.default.zone_id
   name    = "fm${count.index}._domainkey.${aws_route53_zone.default.name}"
   type    = "CNAME"
@@ -38,7 +38,7 @@ resource aws_route53_record fastmail-domainkey {
 }
 
 resource aws_route53_record fastmail-caldav {
-  count = local.enable_fastmail_count
+  count   = local.enable_fastmail_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "_caldavs_.tcp.${aws_route53_zone.default.name}"
   type    = "SRV"
@@ -50,7 +50,7 @@ resource aws_route53_record fastmail-caldav {
 }
 
 resource aws_route53_record fastmail-carddav {
-  count = local.enable_fastmail_count
+  count   = local.enable_fastmail_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "_carddav._tcp.${aws_route53_zone.default.name}"
   type    = "SRV"
@@ -62,7 +62,7 @@ resource aws_route53_record fastmail-carddav {
 }
 
 resource aws_route53_record fastmail-imaps {
-  count = local.enable_fastmail_count
+  count   = local.enable_fastmail_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "_imaps._tcp.${aws_route53_zone.default.name}"
   type    = "SRV"
@@ -74,7 +74,7 @@ resource aws_route53_record fastmail-imaps {
 }
 
 resource aws_route53_record fastmail-submission {
-  count = local.enable_fastmail_count
+  count   = local.enable_fastmail_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "_submission._tcp.${aws_route53_zone.default.name}"
   type    = "SRV"
@@ -86,7 +86,7 @@ resource aws_route53_record fastmail-submission {
 }
 
 resource aws_route53_record fastmail-mail {
-  count = local.enable_fastmail && local.fastmail_web_hostname != null ? 1 : 0
+  count   = local.enable_fastmail && local.fastmail_web_hostname != null ? 1 : 0
   zone_id = aws_route53_zone.default.zone_id
   name    = "${local.fastmail_web_hostname}.${aws_route53_zone.default.name}"
   type    = "A"
@@ -99,7 +99,7 @@ resource aws_route53_record fastmail-mail {
 }
 
 resource aws_route53_record fastmail-spf {
-  count = local.enable_fastmail && local.fastmail_extra_spf != null ? 1 : 0
+  count   = local.enable_fastmail && local.fastmail_extra_spf != null ? 1 : 0
   zone_id = aws_route53_zone.default.zone_id
   name    = aws_route53_zone.default.name
   type    = "SPF"
@@ -111,7 +111,7 @@ resource aws_route53_record fastmail-spf {
 }
 
 resource aws_route53_record fastmail-txt {
-  count = local.enable_fastmail && local.fastmail_extra_spf != null ? 1 : 0
+  count   = local.enable_fastmail && local.fastmail_extra_spf != null ? 1 : 0
   zone_id = aws_route53_zone.default.zone_id
   name    = aws_route53_zone.default.name
   type    = "TXT"

@@ -1,6 +1,6 @@
 
 resource aws_route53_record mailgun-spf1 {
-  count = local.enable_mailgun_count
+  count   = local.enable_mailgun_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "mg.${aws_route53_zone.default.name}"
   type    = "TXT"
@@ -12,7 +12,7 @@ resource aws_route53_record mailgun-spf1 {
 }
 
 resource aws_route53_record mailgun-dk {
-  count = local.enable_mailgun_count
+  count   = local.enable_mailgun_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "smtp._domainkey.mg.${aws_route53_zone.default.name}"
   type    = "TXT"
@@ -24,7 +24,7 @@ resource aws_route53_record mailgun-dk {
 }
 
 resource aws_route53_record mailgun-mx-0 {
-  count = local.enable_mailgun_count
+  count   = local.enable_mailgun_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "mg.${aws_route53_zone.default.name}"
   type    = "MX"
@@ -37,7 +37,7 @@ resource aws_route53_record mailgun-mx-0 {
 }
 
 resource aws_route53_record mailgun-email {
-  count = local.enable_mailgun_count
+  count   = local.enable_mailgun_count
   zone_id = aws_route53_zone.default.zone_id
   name    = "email.mg.${aws_route53_zone.default.name}"
   type    = "CNAME"

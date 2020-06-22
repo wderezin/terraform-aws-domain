@@ -2,7 +2,7 @@ resource "aws_acm_certificate" "cert" {
   domain_name       = local.acm_cert_domain
   validation_method = "DNS"
 
-//  tags = local.tags
+  //  tags = local.tags
 
   lifecycle {
     create_before_destroy = false
