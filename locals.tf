@@ -12,4 +12,6 @@ locals {
   fastmail_extra_spf    = var.enable_fastmail_mailchimp ? "include:servers.mcsv.net ${var.fastmail_extra_spf}" : var.fastmail_extra_spf
 
   enable_mailgun_count = var.enable_mailgun ? 1 : 0
+
+  subdomain_name_servers = var.subdomain_name_servers
 }

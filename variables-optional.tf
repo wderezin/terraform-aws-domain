@@ -34,3 +34,9 @@ variable enable_mailgun {
   default = false
   description = "Configure DNS for mailgun"
 }
+
+variable subdomain_name_servers {
+  type = map(list[string])
+  default = {}
+  descritpion = "A map of <name> : [name servers]"
+}
