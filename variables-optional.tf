@@ -1,4 +1,10 @@
 
+variable create_acm {
+  type        = bool
+  default     = true
+  description = "Create the default wildcard ACM cert for the domain"
+}
+
 variable enable_fastmail {
   type        = bool
   default     = false
@@ -42,13 +48,13 @@ variable subdomain_name_servers {
 }
 
 variable cnames {
-  type = map(list(string))
-  default = {}
+  type        = map(list(string))
+  default     = {}
   description = "A map of <name> : [values]"
 }
 
 variable txts {
-  type = map(list(string))
-  default = {}
+  type        = map(list(string))
+  default     = {}
   description = "A map of <name> : [values]"
 }

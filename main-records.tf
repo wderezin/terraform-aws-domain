@@ -1,5 +1,4 @@
 
-
 resource aws_route53_record cname {
   for_each = local.cnames
   name     = "${each.key}.daringway.com"

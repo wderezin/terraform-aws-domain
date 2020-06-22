@@ -1,9 +1,11 @@
 
 locals {
-  fqdn            = var.fqdn
-  acm_cert_domain = "*.${local.fqdn}"
+  fqdn = var.fqdn
 
-// 5 minutes
+  create_acm_count = var.create_acm ? 1 : 0
+  acm_cert_domain  = "*.${local.fqdn}"
+
+  // 5 minutes
   dns_ttl = 3600
 
   enable_fastmail              = var.enable_fastmail
@@ -16,9 +18,9 @@ locals {
 
   subdomain_name_servers = var.subdomain_name_servers
 
-  cnames = var.cnames
+  cnames    = var.cnames
   cname_ttl = local.dns_ttl
 
-  txts = var.txts
+  txts     = var.txts
   txts_ttl = local.dns_ttl
 }
