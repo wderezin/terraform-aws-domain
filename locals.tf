@@ -4,7 +4,7 @@ locals {
 
   create_acm = var.create_acm
   create_acm_count = var.create_acm ? 1 : 0
-  acm_cert_domain  = "*.${local.fqdn}"
+  acm_cert_domain  = local.fqdn
 
   // 5 minutes
   dns_ttl = 3600
