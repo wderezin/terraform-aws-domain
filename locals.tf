@@ -15,6 +15,10 @@ locals {
   enable_mailgun_count = var.enable_mailgun ? 1 : 0
 
   subdomain_name_servers = var.subdomain_name_servers
+
   cnames = var.cnames
   cname_ttl = local.dns_ttl
+
+  txts = var.txts
+  txts_ttl = local.dns_ttl
 }

@@ -46,3 +46,9 @@ variable cnames {
   default = {}
   description = "A map of <name> : [values]"
 }
+
+variable txts {
+  type = map(list(string))
+  default = {}
+  description = "A map of <name> : [values]"
+}
