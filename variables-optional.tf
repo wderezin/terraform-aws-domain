@@ -38,5 +38,5 @@ variable enable_mailgun {
 variable subdomain_name_servers {
   type = map(list[string])
   default = {}
-  descritpion = "A map of <name> : [name servers]"
+  description = "A map of <name> : [name servers]"
 }
