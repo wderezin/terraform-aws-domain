@@ -5,5 +5,5 @@ output zone {
 }
 
 output acm {
-  value = aws_acm_certificate.cert[0]
+  value = local.create_acm ? aws_acm_certificate.cert[0] : null
 }
