@@ -5,6 +5,5 @@ output zone {
 }
 
 output acm {
-  count = local.create_acm_count
-  value = aws_acm_certificate.cert[0]
+  value = local.create_acm ? aws_acm_certificate.cert[0] : null
 }
