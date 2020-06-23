@@ -1,7 +1,10 @@
 resource "aws_acm_certificate" "cert" {
   count             = local.create_acm_count
   domain_name       = local.acm_cert_domain
+  subject_alternative_names = subject_alternative_names
+
   validation_method = "DNS"
+
 
   //  tags = local.tags
 
