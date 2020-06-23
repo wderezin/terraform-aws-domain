@@ -1,5 +1,4 @@
 resource aws_acm_certificate cert {
-  count                     = local.create_acm_count
   domain_name               = local.acm_cert_domain
   subject_alternative_names = local.subject_alternative_names
 
@@ -13,12 +12,11 @@ resource aws_acm_certificate cert {
 }
 
 resource aws_route53_record cert_validation {
-  count   = local.create_acm_count
-  name    = aws_acm_certificate.cert[0].domain_validation_options.0.resource_record_name
-  type    = aws_acm_certificate.cert[0].domain_validation_options.0.resource_record_type
+  name    = aws_acm_certificate.cert.domain_validation_options.0.resource_record_name
+  type    = aws_acm_certificate.cert.domain_validation_options.0.resource_record_type
   zone_id = aws_route53_zone.default.zone_id
   records = [
-    for value in aws_acm_certificate.cert[0].domain_validation_options : value.resource_record_value
+    for value in aws_acm_certificate.cert.domain_validation_options : value.resource_record_value
   ]
   ttl = 60
   lifecycle {
@@ -28,9 +26,9 @@ resource aws_route53_record cert_validation {
 
 resource aws_acm_certificate_validation cert {
   count           = local.create_acm_count
-  certificate_arn = aws_acm_certificate.cert[0].arn
+  certificate_arn = aws_acm_certificate.cert.arn
 
   validation_record_fqdns = [
-    aws_route53_record.cert_validation[0].fqdn
+    aws_route53_record.cert_validation.fqdn
   ]
 }

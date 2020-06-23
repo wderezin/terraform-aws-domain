@@ -1,10 +1,4 @@
 
-variable create_acm {
-  type        = bool
-  default     = true
-  description = "Create the default wildcard ACM cert for the domain"
-}
-
 variable enable_fastmail {
   type        = bool
   default     = false
