@@ -24,10 +24,9 @@ resource aws_route53_record cert_validation {
   }
 }
 
-resource aws_acm_certificate_validation cert {
-  depends_on = [ aws_route53_record.cert_validation ]
-  certificate_arn = aws_acm_certificate.cert.arn
-  validation_record_fqdns = [
-    aws_route53_record.cert_validation.fqdn
-  ]
-}
+//resource aws_acm_certificate_validation cert {
+//  certificate_arn = aws_acm_certificate.cert.arn
+//  validation_record_fqdns = [
+//    aws_route53_record.cert_validation.fqdn
+//  ]
+//}
