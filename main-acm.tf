@@ -20,14 +20,14 @@ resource aws_route53_record cert_validation {
   records = [
     for value in aws_acm_certificate.cert[0].domain_validation_options : value.resource_record_value
   ]
-  ttl     = 60
+  ttl = 60
   lifecycle {
     create_before_destroy = false
   }
 }
 
 resource aws_acm_certificate_validation cert {
-  count                     = local.create_acm_count
+  count           = local.create_acm_count
   certificate_arn = aws_acm_certificate.cert[0].arn
 
   validation_record_fqdns = [
