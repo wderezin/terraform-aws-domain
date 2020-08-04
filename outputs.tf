@@ -4,5 +4,5 @@ output zone {
 }
 
 output acm {
-  value = module.acm.cert
+  value = module.acm.acm
 }
