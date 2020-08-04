@@ -6,3 +6,7 @@ output zone {
 output acm {
   value = module.acm.acm
 }
+
+output acm_arn {
+  value = module.acm.acm.arn
+}
