@@ -1,11 +1,9 @@
-
 variable tags {
   type        = map(string)
   description = "List of AWS tags"
 }
 
-
-variable domain_name {
+variable zone_id {
   type        = string
-  description = "fully qualify domain name such as acme.com"
+  description = "The route53 zone id."
 }

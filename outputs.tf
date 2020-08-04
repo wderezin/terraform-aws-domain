@@ -4,9 +4,5 @@ output zone {
 }
 
 output acm {
-  value = aws_acm_certificate.cert
-}
-
-output acm_arn {
-  value = aws_acm_certificate.cert.arn
+  value = module.acm.acm
 }
