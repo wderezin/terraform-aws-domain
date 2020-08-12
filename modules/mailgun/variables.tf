@@ -9,3 +9,8 @@ variable zone_id {
   description = "The route53 zone id"
 }
 
+
+variable ttl {
+  type        = number
+  description = "The DNS TTL for all records."
+}

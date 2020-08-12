@@ -2,6 +2,10 @@ data aws_route53_zone zone {
   zone_id = var.zone_id
 }
 
+data aws_caller_identity current {}
+
+data aws_region current {}
+
 locals {
   tags        = var.tags
   domain_name = data.aws_route53_zone.zone.name

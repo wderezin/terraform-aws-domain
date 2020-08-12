@@ -1,7 +1,7 @@
 
 locals {
   dns_zone_name = "your-great-domain.com"
-  tags = {}
+  tags          = {}
 }
 
 module domain {

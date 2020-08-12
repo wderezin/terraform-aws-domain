@@ -1,4 +1,22 @@
 
+variable ttl {
+  type        = number
+  default     = 3600
+  description = "Default ttl in seconds."
+}
+
+variable long_ttl {
+  type        = number
+  default     = 86400
+  description = ""
+}
+
+variable enable_acm_cert {
+  type        = bool
+  default     = true
+  description = "Configure default ACM Domain"
+}
+
 variable enable_fastmail {
   type        = bool
   default     = false
