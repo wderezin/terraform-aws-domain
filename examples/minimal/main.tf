@@ -11,4 +11,4 @@ module domain {
 
   enable_fastmail = true
   enable_mailgun  = true
-}}
+}
