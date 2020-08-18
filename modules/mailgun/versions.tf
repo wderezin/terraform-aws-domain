@@ -1,4 +1,3 @@
-
 terraform {
   required_providers {
     aws = {
@@ -7,5 +6,3 @@ terraform {
   }
   required_version = ">= 0.13"
 }
-
-

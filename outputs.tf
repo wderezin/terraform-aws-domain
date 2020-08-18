@@ -4,9 +4,13 @@ output zone {
 }
 
 output acm {
-  value = module.acm.acm
+  value = local.enable_acm_cert ? module.acm[0].acm : null
 }
 
 output acm_arn {
-  value = module.acm.acm.arn
+  value = local.enable_acm_cert ? module.acm[0].acm.arn : null
+}
+
+output fastmail {
+  value = local.enable_fastmail && local.fastmail_web_hostname != null ? module.fastmail[0].web_url : null
 }

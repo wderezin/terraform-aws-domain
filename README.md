@@ -17,9 +17,19 @@ Optional:
 - Create CNAME records
 - Create TXT records
 
-Submodules:
-- Fastmail: configure domain for fastmail
-- Mailgun: configure doamin for mailgun
+# Fastmail
+
+Adds the needed DNS records to an AWS Route53 zone.  The following items are added.
+
+- MX records for in1-smtp.messagingengine.com and in2-smtp.messagingengine.com.
+- SPF records
+- The _domainkey record for fastmail to validate the domain
+- CALDAV auto discovery record
+- CARDDAV auto discovery record
+- IMAPS auto discovery record
+- SUBMISSION auto discovery record
+- Configure web access with default mail.<domain>
+- Optional configuration for mailchimp to send mail as your domain
 
 [Semantic Version](https://semver.org) is being applied to the modules. 
 
