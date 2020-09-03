@@ -4,7 +4,7 @@ resource aws_route53_record cname {
   name     = "${each.key}.daringway.com"
   ttl      = local.cname_ttl
   type     = "CNAME"
-  zone_id  = aws_route53_zone.default.zone_id
+  zone_id  = data.aws_route53_zone.default.zone_id
 
   records = each.value
 }
@@ -14,7 +14,7 @@ resource aws_route53_record txt {
   name     = "${each.key}.daringway.com"
   ttl      = local.txts_ttl
   type     = "TXT"
-  zone_id  = aws_route53_zone.default.zone_id
+  zone_id  = data.aws_route53_zone.default.zone_id
 
   records = each.value
 }

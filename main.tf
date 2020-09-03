@@ -1,10 +1,19 @@
 
+data aws_route53_zone default {
+  zone_id = local.zone_id
+  name = local.zone_name
+  private_zone = local.private_zone
+  vpc_id = local.zone_vpc_id
+  tags = local.zone_tags_match
+}
+
+
 module acm {
   count = var.enable_acm_cert ? 1 : 0
 
   source  = "./modules/certificate"
   tags    = local.tags
-  zone_id = aws_route53_zone.default.zone_id
+  zone_id = data.aws_route53_zone.default.zone_id
 }
 
 module fastmail {
@@ -12,7 +21,7 @@ module fastmail {
 
   source  = "./modules/fastmail"
   tags    = local.tags
-  zone_id = aws_route53_zone.default.zone_id
+  zone_id = data.aws_route53_zone.default.zone_id
   ttl     = local.long_ttl
 
   extra_spf        = local.fastmail_extra_spf
@@ -20,22 +29,11 @@ module fastmail {
   web_hostname     = local.fastmail_web_hostname
 }
 
-module outlook {
-  count = var.enable_outlook ? 1 : 0
-
-  source  = "./modules/outlook"
-  tags    = local.tags
-  zone_id = aws_route53_zone.default.zone_id
-  ttl     = local.long_ttl
-
-  mx_prefix = local.outlook_mx_prefix
-}
-
 module mailgun {
   count = var.enable_mailgun ? 1 : 0
 
   source  = "./modules/mailgun"
   tags    = local.tags
-  zone_id = aws_route53_zone.default.zone_id
+  zone_id = data.aws_route53_zone.default.zone_id
   ttl     = local.long_ttl
 }
