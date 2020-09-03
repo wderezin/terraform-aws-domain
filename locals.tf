@@ -1,12 +1,12 @@
 
 locals {
-  zone_id = local.zone_id
-  zone_name = local.zone_name
-  private_zone = local.private_zone
-  zone_vpc_id = local.zone_vpc_id
-  zone_tags_match = local.zone_tags_match
+  zone_id         = var.zone_id
+  zone_name       = var.zone_name
+  private_zone    = var.private_zone
+  zone_vpc_id     = var.zone_vpc_id
+  zone_tags_match = var.zone_tags_match
 
-  tags        = var.tags
+  tags = var.tags
 
   enable_acm_cert = var.enable_acm_cert
   enable_fastmail = var.enable_fastmail

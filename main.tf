@@ -1,10 +1,10 @@
 
 data aws_route53_zone default {
-  zone_id = local.zone_id
-  name = local.zone_name
+  zone_id      = local.zone_id
+  name         = local.zone_name
   private_zone = local.private_zone
-  vpc_id = local.zone_vpc_id
-  tags = local.zone_tags_match
+  vpc_id       = local.zone_vpc_id
+  tags         = local.zone_tags_match
 }
 
 

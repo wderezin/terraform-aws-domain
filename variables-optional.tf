@@ -1,35 +1,33 @@
 
 variable zone_id {
-  type = string
-  default = null
+  type        = string
+  default     = null
   description = "The Hosted Zone id of the desired Hosted Zone to Manage."
 }
 
 variable zone_name {
-  type = string
-  default = null
+  type        = string
+  default     = null
   description = "The Host Zone name of the desirect Hosted Zone to Manage"
 }
 
 variable private_zone {
-  type = bool
-  default = null
+  type        = bool
+  default     = null
   description = "Used with zone_name to get a private Hosted Zone to Manage"
 }
 
 variable zone_vpc_id {
-  type = string
-  default = null
+  type        = string
+  default     = null
   description = "Used with zone_name to get a private Hosted Zone associated with the vpc_id to Mange."
 }
 
-variable zone_tag_match {
-  type = map
-  default = null
+variable zone_tags_match {
+  type        = map
+  default     = null
   description = "Used zone_name field. A map of tags, each pair of which must exactly match a pair on the desirect Hosted Zone to Mange"
 }
-
-
 
 variable ttl {
   type        = number
