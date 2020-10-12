@@ -9,7 +9,6 @@ resource aws_route53_record mx {
 }
 
 resource aws_route53_record autodiscover {
-  count   = 3
   zone_id = local.zone_id
   name    = "autodiscover.${local.domain_name}"
   type    = "CNAME"
