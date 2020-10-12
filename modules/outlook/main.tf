@@ -1,13 +1,11 @@
 
-resource aws_route53_record mx-0 {
+resource aws_route53_record mx {
   zone_id = local.zone_id
   name    = local.domain_name
   type    = "MX"
   ttl     = local.ttl
 
-  records = [
-    local.mx_record
-  ]
+  records = [local.mx_record]
 }
 
 resource aws_route53_record autodiscover {
@@ -17,9 +15,7 @@ resource aws_route53_record autodiscover {
   type    = "CNAME"
   ttl     = local.ttl
 
-  records = [
-    "autodiscover.outlook.com"
-  ]
+  records = ["autodiscover.outlook.com"]
 }
 
 resource aws_route53_record txt {
