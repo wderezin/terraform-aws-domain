@@ -8,5 +8,5 @@ locals {
   domain_name = data.aws_route53_zone.zone.name
 
   ttl       = var.ttl
-  mx_record = "${var.mx_prefix}.mail.protection.outlook.com"
+  mx_record = "${var.mx_prefix}.mail.protection.outlook.com."
 }

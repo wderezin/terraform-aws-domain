@@ -5,7 +5,9 @@ resource aws_route53_record mx {
   type    = "MX"
   ttl     = local.ttl
 
-  records = [local.mx_record]
+  records = [
+    "0 local.mx_record"
+  ]
 }
 
 resource aws_route53_record autodiscover {
@@ -14,7 +16,9 @@ resource aws_route53_record autodiscover {
   type    = "CNAME"
   ttl     = local.ttl
 
-  records = ["autodiscover.outlook.com"]
+  records = [
+    "autodiscover.outlook.com"
+  ]
 }
 
 resource aws_route53_record txt {
