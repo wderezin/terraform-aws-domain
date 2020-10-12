@@ -6,7 +6,7 @@ resource aws_route53_record mx {
   ttl     = local.ttl
 
   records = [
-    "0 local.mx_record"
+    "0 ${local.mx_record}"
   ]
 }
 
