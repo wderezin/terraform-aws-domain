@@ -19,8 +19,3 @@ variable ttl {
   description = "The DNS TTL for all records."
 }
 
-variable enable_mailchimp {
-  type        = bool
-  description = "Add the required for SPF and TXT records for mail to be sent from mailchimp."
-}
-

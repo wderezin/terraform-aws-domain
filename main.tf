@@ -28,7 +28,7 @@ module outlook {
   zone_id = aws_route53_zone.default.zone_id
   ttl     = local.long_ttl
 
-  mx_prefix = ""
+  mx_prefix = local.outlook_mx_prefix
 }
 
 module mailgun {
