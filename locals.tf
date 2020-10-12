@@ -5,6 +5,7 @@ locals {
 
   enable_acm_cert = var.enable_acm_cert
   enable_fastmail = var.enable_fastmail
+  enable_outlook  = var.enable_outlook
   enable_mailgun  = var.enable_mailgun
 
   dns_ttl  = var.ttl
@@ -17,6 +18,8 @@ locals {
 
   txts     = var.txts
   txts_ttl = local.dns_ttl
+
+  outlook_mx_prefix = var.outlook_mx_prefix
 
   fastmail_web_hostname        = var.fastmail_web_hostname
   fastmail_extra_spf           = var.fastmail_extra_spf
