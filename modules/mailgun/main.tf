@@ -21,17 +21,17 @@ resource aws_route53_record mailgun-dk {
   ]
 }
 
-//resource aws_route53_record mailgun-mx-0 {
-//  zone_id = local.zone_id
-//  name    = "mg.${local.domain_name}"
-//  type    = "MX"
-//  ttl     = local.ttl
-//
-//  records = [
-//    "10 mxa.mailgun.org",
-//    "20 mxb.mailgun.org"
-//  ]
-//}
+resource aws_route53_record mailgun-mx-0 {
+  zone_id = local.zone_id
+  name    = "mg.${local.domain_name}"
+  type    = "MX"
+  ttl     = local.ttl
+
+  records = [
+    "10 mxa.mailgun.org",
+    "20 mxb.mailgun.org"
+  ]
+}
 
 resource aws_route53_record mailgun-email {
   zone_id = local.zone_id
