@@ -15,9 +15,6 @@ locals {
   dns_ttl  = var.ttl
   long_ttl = var.long_ttl
 
-  enable_outlook  = var.enable_outlook
-  outlook_mx_prefix = var.outlook_mx_prefix
-
   subdomain_name_servers = var.subdomain_name_servers
 
   cnames    = var.cnames
