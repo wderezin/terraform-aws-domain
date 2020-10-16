@@ -1,10 +1,10 @@
 
 output zone {
-  value = aws_route53_zone.default
+  value = data.aws_route53_zone.default
 }
 
 output zone_name {
-  value = aws_route53_zone.default.name
+  value = data.aws_route53_zone.default.name
 }
 
 output acm {

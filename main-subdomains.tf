@@ -4,7 +4,7 @@ resource aws_route53_record dev_ns {
   name     = "${each.key}.daringway.com"
   ttl      = 86400
   type     = "NS"
-  zone_id  = aws_route53_zone.default.zone_id
+  zone_id  = data.aws_route53_zone.default.zone_id
 
   records = each.value
 }
