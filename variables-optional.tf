@@ -47,6 +47,18 @@ variable enable_acm_cert {
   description = "Configure default ACM Domain"
 }
 
+variable enable_outlook {
+  type        = bool
+  default     = false
+  description = "Configure DNS for Microsoft Outlook"
+}
+
+variable outlook_mx_prefix {
+  type        = string
+  default     = null
+  description = "The MX prefix to .mail.protection.outlook.com."
+}
+
 variable enable_fastmail {
   type        = bool
   default     = false
