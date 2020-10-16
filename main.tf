@@ -20,6 +20,17 @@ module fastmail {
   web_hostname     = local.fastmail_web_hostname
 }
 
+module outlook {
+  count = var.enable_outlook ? 1 : 0
+
+  source  = "./modules/outlook"
+  tags    = local.tags
+  zone_id = aws_route53_zone.default.zone_id
+  ttl     = local.long_ttl
+
+  mx_prefix = local.outlook_mx_prefix
+}
+
 module mailgun {
   count = var.enable_mailgun ? 1 : 0
 
