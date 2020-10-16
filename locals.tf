@@ -12,6 +12,9 @@ locals {
   enable_fastmail = var.enable_fastmail
   enable_mailgun  = var.enable_mailgun
 
+  enable_outlook  = var.enable_outlook
+  outlook_mx_prefix = var.outlook_mx_prefix
+
   dns_ttl  = var.ttl
   long_ttl = var.long_ttl
 
