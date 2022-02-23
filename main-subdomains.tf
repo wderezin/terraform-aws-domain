@@ -1,5 +1,5 @@
 
-resource aws_route53_record dev_ns {
+resource "aws_route53_record" "dev_ns" {
   for_each = local.subdomain_name_servers
   name     = "${each.key}.${local.zone_name}"
   ttl      = 86400

@@ -9,10 +9,13 @@ locals {
   tags = var.tags
 
   enable_acm_cert = var.enable_acm_cert
-  enable_fastmail = var.enable_fastmail
+  enable_fastmail = var.email_provider == "fastmail"
   enable_mailgun  = var.enable_mailgun
 
-  enable_outlook  = var.enable_outlook
+  enable_google_domain    = var.email_provider == "google_domain"
+  enable_google_workspace = var.email_provider == "google_workspace"
+
+  enable_outlook    = var.email_provider == "outlook"
   outlook_mx_prefix = var.outlook_mx_prefix
 
   dns_ttl  = var.ttl
