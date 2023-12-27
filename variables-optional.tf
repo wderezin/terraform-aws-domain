@@ -99,6 +99,12 @@ variable "subdomain_name_servers" {
   description = "A map of <name> : [name servers]"
 }
 
+variable "as" {
+  type        = map(list(string))
+  default     = {}
+  description = "A map of <name> : [IPs]"
+}
+
 variable "cnames" {
   type        = map(list(string))
   default     = {}
@@ -110,3 +116,5 @@ variable "txts" {
   default     = {}
   description = "A map of <name> : [values]"
 }
+
+
