@@ -24,7 +24,7 @@ locals {
   subdomain_name_servers = var.subdomain_name_servers
 
   as    = var.as
-  a_ttl = local.dns_ttl
+  as_ttl = local.dns_ttl
 
   cnames    = var.cnames
   cname_ttl = local.dns_ttl
