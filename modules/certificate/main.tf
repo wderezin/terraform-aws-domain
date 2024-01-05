@@ -1,3 +1,4 @@
+
 resource aws_acm_certificate cert {
   domain_name               = local.acm_cert_domain
   subject_alternative_names = local.subject_alternative_names

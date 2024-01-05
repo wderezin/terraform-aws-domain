@@ -9,6 +9,8 @@ locals {
   tags = var.tags
 
   enable_acm_cert = var.enable_acm_cert
+  acm_region      = var.acm_region
+
   enable_fastmail = var.email_provider == "fastmail"
   enable_mailgun  = var.enable_mailgun
 

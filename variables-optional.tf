@@ -47,6 +47,12 @@ variable "enable_acm_cert" {
   description = "Configure default ACM Domain"
 }
 
+variable "acm_region"  {
+  type        = string
+  default     = "us-east-1"
+  description = "Regions to deploy ACM cert, defaults to us-east-1 for CloudFront"
+}
+
 variable "email_provider" {
   type        = string
   default     = null

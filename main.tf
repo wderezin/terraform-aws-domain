@@ -7,6 +7,10 @@ data "aws_route53_zone" "default" {
   tags         = local.zone_tags_match
 }
 
+provider "aws" {
+  alias  = "acm_region"
+  region = local.acm_region
+}
 
 module "acm" {
   count = var.enable_acm_cert ? 1 : 0
@@ -14,6 +18,10 @@ module "acm" {
   source  = "./modules/certificate"
   tags    = local.tags
   zone_id = data.aws_route53_zone.default.zone_id
+
+   providers = {
+      aws = aws.acm_region
+  }
 }
 
 module "fastmail" {
