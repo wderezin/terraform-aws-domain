@@ -28,6 +28,8 @@ locals {
   as    = var.as
   as_ttl = local.dns_ttl
 
+  aaaa = var.aaaa
+
   cnames    = var.cnames
   cname_ttl = local.dns_ttl
 

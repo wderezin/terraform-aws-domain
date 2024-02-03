@@ -111,6 +111,12 @@ variable "as" {
   description = "A map of <name> : [IPs]"
 }
 
+variable "aaaa" {
+  type        = map(list(string))
+  default     = {}
+  description = "A map of <name> : [IPV6s]"
+}
+
 variable "cnames" {
   type        = map(list(string))
   default     = {}
